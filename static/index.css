@@ -1,0 +1,372 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+  --clr-base:white;
+  --card-base:black;
+  --font:black;
+  --bg-img:url("https://www.itl.cat/pngfile/big/10-102488_photo-wallpaper-abstract-design-blue-color-material-architecture.jpg")no-repeat center center/cover;
+  --profile-bg:black;
+}
+.body1{
+  background-color: var(--clr-base);
+}
+.dark-mode{
+  --font:white;
+  --clr-base:black;
+  --card-base:darkblue;
+  --bg-img:url('bg1.jpg')no-repeat center center/cover;
+  --profile-bg:white;
+}
+
+body{
+    height: 100vh;
+    font-family: sans-serif;
+}
+
+grid{
+    display: grid;
+    grid-template-areas:
+    "header"
+    "body"
+    "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 5rem 1fr 5rem;
+    height: 100%;;
+}
+
+.bgImg{
+background: var(--bg-img);
+padding: 2rem;
+border-radius: 0 0 2rem 2rem;
+}
+/* Header */
+header{
+  display: flex;
+  justify-content: space-between;
+  margin: 3rem 6rem;
+}
+
+header>h1{
+  
+  padding: 1.5rem 0;
+  border-radius: 2rem;
+}
+
+.heading>img{
+width: 46%;
+border-radius: 0.5rem;
+}
+.header-text{
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+  border-radius: 2.5rem;
+  position: relative;
+  z-index: 1;
+  background: inherit;
+  overflow: hidden;
+  padding: 0.5rem;
+  border: 0.05px solid #0000006e;
+}
+.header-text:before {
+  content: "";
+  position: absolute;
+  background: inherit;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+  background-color: #0000008a;
+  filter: blur(10px);
+  margin: -20px;
+  }
+
+.header-text>p{
+  margin-top: 0.5rem;
+}
+
+input[type='checkbox']{
+  background: #333;
+  width: 4rem;
+  cursor: pointer;
+  margin: 0 1rem;
+  height: 2rem;
+  -webkit-appearance: none;
+  border-radius: 1rem;
+}
+input[type='checkbox']:before{
+  content: "";
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  background-color: white;
+  border-radius: 1rem;
+  transition: all 0.8s;
+}
+input:checked[type='checkbox']:before{
+  content: '';
+  background: orange;
+  transform: translateX(2rem);
+}
+
+/* profile */
+
+.profile{
+   
+  
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+    border-radius: 2.5rem;
+    position: relative;
+    z-index: 1;
+    background: inherit;
+    overflow: hidden;
+    background-color: white;
+    
+  margin: 2rem 6rem 9rem 6rem;
+  /* box-shadow: 10px 4px 8px 0 black; */
+  padding: 0 1.5rem 2.5rem 1.5rem;
+  /* border-radius: 2rem; */
+  
+}
+
+.profile:before {
+  content: "";
+  position: absolute;
+  background: inherit;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+  filter: blur(10px);
+  margin: -20px;
+  }
+
+.profile>img{
+  width: 20%;
+  float: right;
+  border-radius: 75%;
+  padding: 3.5rem 0px;
+
+}
+
+.profile-text{
+padding: 5rem 28rem 0 0;
+}
+
+.profile-text>h2{
+  /* font-family: 'Jua', sans-serif; */
+  font-size: 3.5rem;
+  padding:0.5rem 0;
+color: var(--font);
+}
+
+.profile-text>p{
+  /* font-family: 'Source Code Pro', monospace; */
+  font-size: 1.2rem;
+  padding:0.5rem 0;
+color: var(--font);
+
+}
+
+.profile-text>button{
+  margin:0.5rem 0;
+  padding: 1rem 2rem;
+  border-radius: 1.5rem;
+  background: indigo;
+  color: white;
+  border-color: indigo;
+}
+
+.header{
+    grid-area: header;
+}
+
+/* blogs */
+.blog-link{
+  text-decoration: none;
+}
+.blogs{
+display: grid;
+place-items: center center;
+}
+
+.blogs>h3{
+    font-size: 41px;
+    color: var(--font);
+}
+
+.cards{
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(223px,1fr));
+padding: 20px;
+grid-gap: 40px;
+}
+
+.card{
+background-color: var(--card-base);
+border-radius: 20px;
+box-shadow: 0 0 30px rgba(0, 0, 0, 0.18);
+}
+
+.container{
+    position: relative;
+    clip-path: polygon(0 0,100% 0,100% 85%,0 100%);
+}
+
+img{
+    width: 100%;
+    display: block;
+    border-radius: 20px 20px 0 0;
+}
+
+.details{
+    padding: 20px 10px;
+}
+
+.details>h3{
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 10px 0 15px 0;
+}
+
+.details>p{
+    color: #a0a0a0;
+    font-size: 15px;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+.details>button{
+    color: black;
+    font-size: 18px;
+    display: flex;
+    margin: auto;
+    background-image:linear-gradient(0deg, #fdc830,#f37335 ) ;
+    border-radius: 7px;
+}
+
+.details>button:hover{
+    background-image:linear-gradient(0deg, #005aa7,#fffde4 ) ;
+}
+.body{
+    grid-area: body;
+}
+
+
+
+/* footer */
+
+.footer{
+    grid-area: footer;
+}
+.centerdiv{
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+padding: 2.5rem;
+  }
+  .icon{
+    height: 50px;
+    width : 50px;
+    background-color: #f5f6fa;
+    border-radius: 50px;
+    text-align: center;
+    
+    margin: 20px;
+   
+  }
+  a i {
+    transition: all 0.3s linear;
+  }
+  a:hover i{
+    transform: scale(1.3s);
+  }
+  .fa{
+padding: 0.8rem;    
+  }
+  .fa-linkedin{
+    color: rgb(27, 102, 163);
+
+  }
+  .fa-facebook{
+    color: rgb(5, 76, 209);
+  }
+  .footer-copyright{
+
+    text-align: center;
+    color: whitesmoke;
+    
+
+  }
+  .footer-copyright>a{
+    text-decoration: none;
+    color: white;
+  
+  }
+  .footer-copyright>a:hover{
+    color:rgb(95, 226, 101);
+    font-size: 1.3rem;
+  }
+
+.fot-color{
+  background-color: #181717;
+  border-radius: 0;
+  margin: 0;
+
+}
+
+@media screen and (max-width:720px){
+  header{
+    display: inline-block;
+    margin: 0;
+  }
+  header>h1{
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .heading>img{
+    width: 85%;
+  }
+
+  .header-text{
+    margin: 3rem 6rem;
+  }
+  .profile {
+    padding: 1.2rem 1.5rem 2.5rem 1.5rem;
+  margin: 0;
+  }
+    .profile > img {
+      width: 36%;
+      padding: 0;}
+  .profile-text{
+    padding: 0;
+    font-size: 0.1rem;
+  }
+  .profile-text>h2{
+    font-size: 2rem;
+  } 
+  .profile-text>p{
+    padding: 2.5rem 0;
+  }   
+  .footer-copyright{
+    margin: 0 0;
+    
+  }
+.fot-color{
+  margin: 0;
+}
+
+}
